@@ -83,14 +83,13 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onDoubleTap(MotionEvent motionEvent) {
-
-        return false;
+        doubleTaps++;
+        return true;
     }
 
     @Override
     public boolean onDoubleTapEvent(MotionEvent motionEvent) {
-        // if second time
-        doubleTaps++;
+        gesturesLogTextView.append("\nonDoubleTapEvent touch event");
         doubleTapTextView.setText(String.valueOf(doubleTaps));
         return true;
     }
